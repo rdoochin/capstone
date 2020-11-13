@@ -1,0 +1,60 @@
+<!-- this page needs a lot of work -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        h1 {
+            color: green;
+        }
+    </style>
+    <title>Student Dashboard</title>
+</head>
+
+<body>
+    <h1>Welcome to Your Contact Tracing Dashboard</h1>
+    <!-- this is from the tutorial -->
+    <div class="content-section">
+        <!-- The form is now a POST rather than GET method. -->
+        <form method="POST">
+            <!-- Adds security and allows us to access the form variable. -->
+            {% csrf_token %}
+            <!-- The fieldset is used to group related elements in a form. -->
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Please read instructions below</legend>
+                <!-- Prints all of the information in the form. -->
+                {% for field in form %}
+                <p>
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small style="color: grey">{{ field.help_text }}</small>
+                        <p>test</p>
+
+                    {% endif %}
+                    {% for error in field.errors %}
+                <p style="color: red">{{ error }}</p>
+                {% endfor %}
+                </p>
+                {% endfor %}
+            </fieldset>
+            <p>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit Form</button>
+            </div>
+            </p>
+        </form>
+        <div class="border-top pt-3">
+            <p>
+                <small class="text-muted">
+                    Already sumitted this form?
+                </small>
+            </p>
+        </div>
+    </div>
+    <!-- end tutorial code -->
+
+</body>
+
+</html>
