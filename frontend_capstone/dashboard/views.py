@@ -8,6 +8,7 @@ from django.http import Http404
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
+    # might need to pass in the student info as the context (if not a class)
     return render(request, 'dashboard/index.html', context)
 
 

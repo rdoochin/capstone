@@ -1,6 +1,14 @@
 <!-- this page needs a lot of work -->
 
 <!DOCTYPE html>
+<script>
+function processData(dataset) {
+        var result = []
+        dataset = JSON.parse(dataset);
+        dataset.forEach(item => result.push(item.fields));
+        document.getElementById('result').innerHTML = result;
+        return result;
+    }</script>
 <html>
 
 <head>
@@ -13,6 +21,7 @@
 </head>
 
 <body>
+    <div id="total"></div>
     <h1>Welcome to Your Contact Tracing Dashboard</h1>
     <!-- this is from the tutorial -->
     <div class="content-section">
@@ -24,7 +33,11 @@
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Please read instructions below</legend>
                 <!-- Prints all of the information in the form. -->
-                {% for field in form %}
+                <input name="item_text" id="id_new_item" placeholder="Enter your close contacts" />
+                <p>print me
+                    {{student_1.id_num}}
+                </p>
+                <!-- {% for field in form %}
                 <p>
                     {{ field.label_tag }}
                     {{ field }}
@@ -34,14 +47,13 @@
 
                     {% endif %}
                     {% for error in field.errors %}
-                <p style="color: red">{{ error }}</p>
-                {% endfor %}
-                </p>
-                {% endfor %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                {% endfor %} -->
             </fieldset>
             <p>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Submit Form</button>
+                <button onclick="processData(student_1)" class="btn btn-outline-info" type="submit">Submit Form</button>
             </div>
             </p>
         </form>
@@ -56,5 +68,6 @@
     <!-- end tutorial code -->
 
 </body>
+
 
 </html>
