@@ -36,25 +36,22 @@ function processData(dataset) {
 
 </head>
 
-<<<<<<< HEAD
-<body>
+<!-- <body>
     <div id="total"></div>
     <h1>Welcome to Your Contact Tracing Dashboard</h1>
-    <!-- this is from the tutorial -->
+
     <div class="content-section">
-        <!-- The form is now a POST rather than GET method. -->
+
         <form method="POST">
-            <!-- Adds security and allows us to access the form variable. -->
+            
             {% csrf_token %}
-            <!-- The fieldset is used to group related elements in a form. -->
+
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Please read instructions below</legend>
-                <!-- Prints all of the information in the form. -->
                 <input name="item_text" id="id_new_item" placeholder="Enter your close contacts" />
                 <p>print me
                     {{student_1.id_num}}
                 </p>
-                <!-- {% for field in form %}
                 <p>
                     {{ field.label_tag }}
                     {{ field }}
@@ -66,7 +63,6 @@ function processData(dataset) {
                     {% for error in field.errors %}
                     <p style="color: red">{{ error }}</p>
                     {% endfor %}
-                {% endfor %} -->
             </fieldset>
             <p>
             <div class="form-group">
@@ -79,8 +75,7 @@ function processData(dataset) {
                 <small class="text-muted">
                     Already sumitted this form?
                 </small>
-            </p>
-=======
+            </p> -->
 <body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
 
     <nav id="header" class="bg-white fixed w-full z-10 top-0 shadow">
@@ -126,7 +121,6 @@ function processData(dataset) {
 
             </div>
 
->>>>>>> 55ea3363efe0366481a8c1161790a4458653b0f3
         </div>
     </nav>
 
@@ -267,10 +261,8 @@ function processData(dataset) {
 
                 <form>
 
-<<<<<<< HEAD
 
 </html>
-=======
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-radio">
@@ -548,4 +540,3 @@ $(window).scroll(function(){
 
 </body>
 </html>
->>>>>>> 55ea3363efe0366481a8c1161790a4458653b0f3

@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('admin/', admin.site.urls),
-    path('', include('dashboard.urls')),    #makes homepage route to dashboard
+    path('', include('dashboard.urls')),    #Makes homepage route to dashboard.
+    path('accounts/', include('django.contrib.auth.urls')), #For student login page. 
 ]
