@@ -1,39 +1,66 @@
+<!--[if IE]><![endif]-->
+	<!--[if lt IE 10 ]>
+		<div class="IE">
+		<div class="alert alert-danger alert-dismissable">
+			It looks like you are using an unsupported version of Internet Explorer. Please download the latest <a href="http://www.microsoft.com/en-us/download/ie.aspx?q=internet+explorer" class="alert-link">update.</a>
+		</div>
+	<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Tulane University Central Authentication Service 1p01</title>
+		<link type="text/css" href="bootstrap.min.css" rel="stylesheet">
+		<link type="text/css" href="css/cover.css" rel="stylesheet">
+		<script type="text/javascript" src="tulane/resources/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/respond.min.js"></script>
+	</head>
+	<body
+		style="background-color:#005532;">
+		<center>
+		<div class="site-wrapper">
+			<div class="site-wrapper-inner">
+				<div class="cover-container">
+						<div class="inner cover">
+							<img src="images/shield-gradient.png" class="img-tulane-responsive" alt="Gibson">
+						</div>
 
+						<form id="fm1" class="form-signin" action="{% url 'login' %}" method="post" autocomplete="off" >
+							{% csrf_token %}
 
-{% block content %}
+							<br/>
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+							<input id="username" name="username" class="form-control" tabindex="1" placeholder="User ID" accesskey="u" type="text" value="" autocomplete="off"  />
 
-{% if next %}
-{% if user.is_authenticated %}
-<p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-{% else %}
-<p>Please login to see this page.</p>
-{% endif %}
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-    </table>
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-</form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
-{% endblock %}
-
-<!-- template from https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication -->
+							<input id="password" name="password" class="form-control" tabindex="2" placeholder="Password" accesskey="p" type="password" value="" autocomplete="off"/>
+							<div class="signincase">
+								<input type="hidden" name="lt" value="LT-9089261-c2dHejPecI7W1Piemon2X4z29LO6Is" />
+								<input type="hidden" name="execution" value="e1s1" />
+								<input type="hidden" name="_eventId" value="submit" />
+								<input class="btn btn-lg btn-primary btn-block" name="submit" accesskey="l" value='Sign In' tabindex="3" type="submit" />
+								<p>
+									<center><a href="/tulane/forgot.jsp?service=https%3A%2F%2Ftulane.instructure.com%2Flogin%2Fcas">I forgot my username/password</a></center>
+								</p>
+							</div>
+						</form>
+						<div class="link-container" style="display:none;">
+							<p>
+								<a href="https://timepunch.tulane.edu/wfc/applications/wtk/html/ess/logon.jsp"class="tullink">Kronos</a>
+									|
+								<a id="inblink" href="/ssomanager/sso/inbsso.jsp" class="tulink">Banner</a>
+									|
+								<a href="https://tulane.blackboard.com"class="tulink">myTulane</a>
+									|
+								<a href="http://tulane.edu/privacy.cfm"class="turlink">Privacy</a>
+							</p>
+						</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			document.getElementById("username").focus();
+		</script>
+		</center>
+	</body>
+</html>
