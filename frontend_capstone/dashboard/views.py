@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Question
+# from .models import Question
+from .models import Student
 from django.template import context
 from django.http import Http404
 
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    latest_question_list = Student.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
     # might need to pass in the student info as the context (if not a class)
     return render(request, 'dashboard/index.html', context)
@@ -27,7 +28,7 @@ def vote(request, question_id):
 
 def detail(request, question_id):
     try:
-        question = Question.objects.get(pk=question_id)
-    except Question.DoesNotExist:
+        question = Student.objects.get(pk=question_id)
+    except Student.DoesNotExist:
         raise Http404("Question does not exist")
     return render(request, 'dashboard/detail.html', {'question': question})
