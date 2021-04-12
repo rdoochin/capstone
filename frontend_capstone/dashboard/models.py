@@ -2,6 +2,8 @@
 import datetime
 from django.db import models
 from django.contrib.auth.models import User     # Pretty sure we need this. 
+# import numpy as np
+# from random import randint
 
 from django.utils import timezone
 
@@ -20,3 +22,8 @@ class Student(models.Model):
 
     # def __str__(self):
     #     return self.title
+
+
+#sources:
+# https://www.youtube.com/watch?v=QUXvqfN1ENM
+

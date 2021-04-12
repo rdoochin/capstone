@@ -11,6 +11,8 @@ from random import randint
 
 from .models import Student         #Getting our Student model.
 
+from django_seed import Seed        #START HERE!!!!!!!
+
 randint(100, 999)
 fake = Faker()
 
