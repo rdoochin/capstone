@@ -1,7 +1,11 @@
 #!/rebekahdoochin/senior_year/capstone/capstone/frontend_capstone/dashboard python
 import datetime
 from django.db import models
+from django.contrib.auth.models import User     # Pretty sure we need this. 
+
 from django.utils import timezone
+# from django_faker import Faker
+# populator = Faker.getPopulator()
 
 ##
 ##      Going to use the classes here to create a table in the database. Student profiles
@@ -44,3 +48,6 @@ class Student(models.Model):
     sport = models.CharField(max_length=20)
     current_class = models.CharField(max_length=20)   #This should be a course number
     last_modifed = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
