@@ -5,7 +5,8 @@
 			It looks like you are using an unsupported version of Internet Explorer. Please download the latest <a href="http://www.microsoft.com/en-us/download/ie.aspx?q=internet+explorer" class="alert-link">update.</a>
 		</div>
 	<![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-><html lang="en"><!-<![endif]-->
+{% load static %}
 	<head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +14,12 @@
 	    <title>Tulane University Central Authentication Service 1p01</title>
 		<link type="text/css" href="bootstrap.min.css" rel="stylesheet">
 		<link type="text/css" href="css/cover.css" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'css/cover.css' %}">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 		<script type="text/javascript" src="tulane/resources/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="js/respond.min.js"></script>
 	</head>
-	<body
-		style="background-color:#005532;">
+	<body style="background-color:#005532;">
 		<center>
 		<div class="site-wrapper">
 			<div class="site-wrapper-inner">
@@ -34,13 +36,13 @@
 							<input id="username" name="username" class="form-control" tabindex="1" placeholder="User ID" accesskey="u" type="text" value="" autocomplete="off"  />
 
 							<input id="password" name="password" class="form-control" tabindex="2" placeholder="Password" accesskey="p" type="password" value="" autocomplete="off"/>
-							<div class="signincase">
+							<div class="signincase" >
 								<input type="hidden" name="lt" value="LT-9089261-c2dHejPecI7W1Piemon2X4z29LO6Is" />
 								<input type="hidden" name="execution" value="e1s1" />
 								<input type="hidden" name="_eventId" value="submit" />
 								<input class="btn btn-lg btn-primary btn-block" name="submit" accesskey="l" value='Sign In' tabindex="3" type="submit" />
 								<p>
-									<center><a href="/tulane/forgot.jsp?service=https%3A%2F%2Ftulane.instructure.com%2Flogin%2Fcas">I forgot my username/password</a></center>
+									<center><a href="/tulane/forgot.jsp?service=https%3A%2F%2Ftulane.instructure.com%2Flogin%2Fcas">I forgot my username/password </a> </center>
 								</p>
 							</div>
 						</form>
