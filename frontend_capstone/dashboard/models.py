@@ -11,13 +11,15 @@ class Student(models.Model):
     id_num = models.IntegerField(default=0)         #should maybe be the input?
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
-    greek_org = models.CharField(max_length=20)
+    # email = models.CharField(max_length=20)
+    # phone_number = models.CharField(max_length=20)
+    # gender = models.CharField(max_length=20)
     class_year = models.IntegerField(default=0)
+    greek_org = models.CharField(max_length=20)
     housing_building = models.CharField(max_length=20)
-    housing_num = models.CharField(max_length=20)
+    current_class = models.CharField(max_length=20)
     club = models.CharField(max_length=20)            #models.expressionlist ? 
-    sport = models.CharField(max_length=20)
-    current_class = models.CharField(max_length=20)   #This should be a course number
+    # sport = models.CharField(max_length=20)
     last_modifed = models.DateTimeField(auto_now=True)
 
     # def __str__(self):

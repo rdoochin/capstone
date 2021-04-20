@@ -32,3 +32,12 @@ def detail(request, question_id):
     except Student.DoesNotExist:
         raise Http404("Question does not exist")
     return render(request, 'dashboard/detail.html', {'question': question})
+
+
+# def index(request):
+#     data = Student.objects.all()
+#     stu = {
+#         "student_number": data
+#     }
+
+#     return render(request, "dashboard/templates/dashboard/index.html", stu)
