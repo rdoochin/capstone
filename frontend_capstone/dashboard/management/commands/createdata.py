@@ -1,5 +1,6 @@
 import random
-import numpy as np
+from random import randint
+# import numpy as np
 import faker.providers
 from django.core.management.base import BaseCommand
 from faker import Faker
@@ -8,7 +9,7 @@ from dashboard.models import Student
 # Use python manage.py createdata to generate phony data.
 
 CLUBS = [
-    np.nan, "Book club", "Cycling", "Tennis Club", "Soccer Club", "Rowing",
+    "Book club", "Cycling", "Tennis Club", "Soccer Club", "Rowing",
     "Karate", "Baseball Club", "Comedy Club", "Feminism", "Dance Team",
     "Running", "Walking", "Cookies and Code", "Puppies Club", "Community Service",
     "Club 1", "Club 2", "Club 3", "Club 4", "Club 5", "Club 6", "Club 7",
@@ -17,7 +18,7 @@ CLUBS = [
 ]
 YEAR = ["Freshman", "Sophmore", "Junior", "Senior", "Graduate"]
 GREEK = [
-    np.nan, "AEPhi", "AEPi", "ZBT", "Pi Phi", "Chi O", "Theta", "Phi Mu", "Kappa",
+    "AEPhi", "AEPi", "ZBT", "Pi Phi", "Chi O", "Theta", "Phi Mu", "Kappa",
          "Zeta Psi", "KSig", "SigEp"
 ]
 DORM = [
@@ -57,12 +58,12 @@ class Command(BaseCommand):
         #     Student.objects.create(name=e)
 
         for _ in range(100):
-            c = fake.unique.student_clubs()
-            y = fake.unique.student_year()
-            g = fake.unique.student_greek()
-            d = fake.unique.student_dorm()
+            c = fake.student_clubs()
+            y = fake.student_year()
+            g = fake.student_greek()
+            d = fake.student_dorm()
 
-            id_num = random(100000000, 999999999)
+            id_num = randint(100000000, 999999999)
             first = fake.first_name()
             last = fake.last_name()
             email = fake.free_email()
@@ -71,14 +72,14 @@ class Command(BaseCommand):
             # cid = random.randint(1, 15)
             # ptid = random.randint(1, 15)
             Student.objects.create(
-                id_number=id_num,
+                id_num=id_num,
                 first_name=first,
                 last_name=last,
                 email=email,
-                year=y,
-                dorm=d,
-                clubs=c,
-                greek=g,
+                class_year=y,
+                housing_building=d,
+                club=c,
+                greek_org=g,
             )
 
         # for i in range(1, 16):
